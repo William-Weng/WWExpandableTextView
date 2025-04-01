@@ -1,0 +1,15 @@
+{
+  "originHash" : "e2f4a4744b86f1e9066e9cbaba9aacee32d2a895decaa2fd2dcca186b1cb731f",
+  "pins" : [
+    {
+      "identity" : "wwkeyboardshadowview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWKeyboardShadowView",
+      "state" : {
+        "revision" : "968e05130d72e87a3594a355ce23bdd959343479",
+        "version" : "1.0.3"
+      }
+    }
+  ],
+  "version" : 3
+}
