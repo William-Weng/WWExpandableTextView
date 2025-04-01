@@ -23,8 +23,6 @@ open class WWExpandableTextView: UIView {
         get { return textView.text }
     }
     
-    private let minPointSize: CGFloat = 12.0
-    
     private var lines: CGFloat = 3.0
     private var gap: CGFloat = 12.0
     
@@ -135,11 +133,14 @@ private extension WWExpandableTextView {
     ///   - gap: 間隔
     func updateConstraint(lines: Double, gap: Double) {
         
+        let minPointSize: CGFloat = 12.0
+        
         self.lines = lines
         self.gap = gap
         
         minHeightConstraint.constant = (textView.font?.pointSize ?? minPointSize) + gap
         maxHeightConstraint.constant = (textView.font?.pointSize ?? minPointSize) + gap * lines
+        
         updateConstraintsIfNeeded()
     }
     
@@ -148,10 +149,9 @@ private extension WWExpandableTextView {
     /// - Returns: CGSize
     func textViewIntrinsicContentSize(_ textView: UITextView) -> CGSize {
         
-        let textViewSize = textView.sizeThatFits(CGSize(width: textView.frame.width, height: CGFloat.greatestFiniteMagnitude))
+        let textViewSize = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude))
         let height = max(min(textViewSize.height, maxHeightConstraint.constant), minHeightConstraint.constant)
-        let size = CGSize(width: UIView.noIntrinsicMetric, height: height)
-                
-        return size
+        
+        return CGSize(width: UIView.noIntrinsicMetric, height: height)
     }
 }

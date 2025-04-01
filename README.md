@@ -12,7 +12,7 @@
 
 ```json
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWExpandableTextView.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWExpandableTextView.git", .upToNextMajor(from: "1.0.1"))
 ]
 ```
 

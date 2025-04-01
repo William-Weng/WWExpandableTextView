@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWExpandableTextView",
       "state" : {
-        "branch" : "main",
-        "revision" : "b933295c0257e5aa61510cd56a4c07ea4902b231"
+        "revision" : "2c2dc36546c4ec15663774c711bd32fa37a569fd",
+        "version" : "1.0.0"
       }
     },
     {
