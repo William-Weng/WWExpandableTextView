@@ -1,6 +1,15 @@
 {
-  "originHash" : "e2f4a4744b86f1e9066e9cbaba9aacee32d2a895decaa2fd2dcca186b1cb731f",
+  "originHash" : "4a1ac9982cc5063a45e02760517abea7a51f4ee82f5561be930132bcde308f70",
   "pins" : [
+    {
+      "identity" : "wwexpandabletextview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWExpandableTextView",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b933295c0257e5aa61510cd56a4c07ea4902b231"
+      }
+    },
     {
       "identity" : "wwkeyboardshadowview",
       "kind" : "remoteSourceControl",
