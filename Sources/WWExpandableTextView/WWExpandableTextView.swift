@@ -151,7 +151,26 @@ private extension WWExpandableTextView {
         
         let textViewSize = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude))
         let height = max(min(textViewSize.height, maxHeightConstraint.constant), minHeightConstraint.constant)
+        let size = textView.text._sizeThatFits(font: textView.font!, maximumSize: .init(width: frame.width, height: .greatestFiniteMagnitude))
         
+        print("\(textView.text._sizeThatFits(font: textView.font!, maximumSize: self.frame.size)) => \(height)")
+        
+        // return size
         return CGSize(width: UIView.noIntrinsicMetric, height: height)
+    }
+}
+
+extension String {
+    
+    /// [計算文字的寬度 + 高度](https://blog.csdn.net/smileKH/article/details/121678702)
+    /// - 最大Size / 自訂字型
+    /// - Parameters:
+    ///   - text: 字串
+    ///   - font: 字型
+    ///   - maximumSize: 最大是多大？
+    ///   - options: NSStringDrawingOptions
+    /// - Returns: CGSize
+    func _sizeThatFits(font: UIFont, maximumSize: CGSize = CGSize(width: CGFloat.infinity, height: CGFloat.infinity), options: NSStringDrawingOptions = [.usesFontLeading, .usesLineFragmentOrigin]) -> CGSize {
+        return self.boundingRect(with: maximumSize, options: options, attributes: [.font : font], context: nil).size
     }
 }

@@ -32,14 +32,14 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController: WWKeyboardShadowViewDelegate {
+extension ViewController: WWKeyboardShadowView.Delegate {
     
-    func keyboardWillChange(view: WWKeyboardShadowView, information: WWKeyboardShadowView.KeyboardInfomation) -> Bool {
+    func keyboardViewChange(_ view: WWKeyboardShadowView, status: WWKeyboardShadowView.DisplayStatus, information: WWKeyboardShadowView.KeyboardInformation, height: CGFloat) -> Bool {
         return true
     }
     
-    func keyboardDidChange(view: WWKeyboardShadowView) {
-        print(view)
+    func keyboardView(_ view: WWKeyboardShadowView, error: WWKeyboardShadowView.CustomError) {
+        print(error)
     }
 }
 
