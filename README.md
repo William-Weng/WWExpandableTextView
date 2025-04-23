@@ -12,15 +12,21 @@
 
 ```json
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWExpandableTextView.git", .upToNextMajor(from: "1.0.1"))
+    .package(url: "https://github.com/William-Weng/WWExpandableTextView.git", .upToNextMajor(from: "1.0.2"))
 ]
 ```
+
+### [可用參數](https://ezgif.com/video-to-webp)
+|參數|說明|
+|-|-|
+|text|文字|
+|attributedText|屬性文字|
 
 ### [可用函式](https://ezgif.com/video-to-webp)
 |函式|說明|
 |-|-|
 |configure(delegate:tag:lines:gap:)|參數設定|
-|setting(font:backgroundColor:borderWidth:borderColor:)|文字框相關設定|
+|setting(font:textColor:backgroundColor:borderWidth:borderColor:)|文字框相關設定|
 |updateHeight()|更新高度|
 
 ### [Example](https://blog.twjoin.com/ios-view-更新-從-setneedsdisplay-到-layoutsubviews-2e673359ccac)
@@ -67,7 +73,7 @@ private extension ViewController {
     
     func initExpandableTextViewSetting() {
         expandableTextView.configure(lines: 3, gap: 21)
-        expandableTextView.setting(font: .systemFont(ofSize: 20), backgroundColor: .white, borderWidth: 2, borderColor: .systemPink)
+        expandableTextView.setting(font: .systemFont(ofSize: 20), textColor: .black, backgroundColor: .white, borderWidth: 2, borderColor: .systemPink)
     }
     
     func initKeyboardViewSetting() {

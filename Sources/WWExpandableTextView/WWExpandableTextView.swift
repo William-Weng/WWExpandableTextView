@@ -18,9 +18,16 @@ open class WWExpandableTextView: UIView {
     
     public override var intrinsicContentSize: CGSize { return textViewIntrinsicContentSize(textView) }
     
-    public var text: String? {
+    /// 文字
+    public var text: String {
         set { textView.text = newValue }
         get { return textView.text }
+    }
+    
+    /// 屬性文字
+    public var attributedText: NSAttributedString {
+        set { textView.attributedText = attributedText }
+        get { return textView.attributedText }
     }
     
     private var lines: CGFloat = 3.0
@@ -61,12 +68,13 @@ public extension WWExpandableTextView {
     /// [文字框相關設定](https://juejin.cn/post/6844904106318888968)
     /// - Parameters:
     ///   - font: 字型
+    ///   - textColor: 文字顏色
     ///   - backgroundColor: 背景顏色
     ///   - borderWidth: 框線寬度
     ///   - borderColor: 框線顏色
     ///   - cornerRadius: 外框圓角
-    func setting(font: UIFont, backgroundColor: UIColor, borderWidth: CGFloat, borderColor: UIColor) {
-        textViewSetting(font: font, backgroundColor: backgroundColor, borderWidth: borderWidth, borderColor: borderColor)
+    func setting(font: UIFont, textColor: UIColor, backgroundColor: UIColor, borderWidth: CGFloat, borderColor: UIColor) {
+        textViewSetting(font: font, textColor: textColor, backgroundColor: backgroundColor, borderWidth: borderWidth, borderColor: borderColor)
     }
     
     /// 更新高度
@@ -100,16 +108,18 @@ private extension WWExpandableTextView {
     /// [文字框相關設定](https://blog.csdn.net/thelittleboy/article/details/84023892)
     /// - Parameters:
     ///   - font: 字型
+    ///   - textColor: 文字顏色
     ///   - backgroundColor: 背景顏色
     ///   - borderWidth: 框線寬度
     ///   - borderColor: 框線顏色
     ///   - cornerRadius: 外框圓角
-    func textViewSetting(font: UIFont = .systemFont(ofSize: 12.0), backgroundColor: UIColor = .white, borderWidth: CGFloat = 0.5, borderColor: UIColor = .lightGray) {
+    func textViewSetting(font: UIFont = .systemFont(ofSize: 12.0), textColor: UIColor = .black, backgroundColor: UIColor = .white, borderWidth: CGFloat = 0.5, borderColor: UIColor = .lightGray) {
         
         layer.borderWidth = borderWidth
         layer.borderColor = borderColor.cgColor
         
         textView.font = font
+        textView.textColor = textColor
         textView.backgroundColor = backgroundColor
         textView.delegate = self
         

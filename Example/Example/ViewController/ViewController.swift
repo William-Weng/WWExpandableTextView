@@ -47,7 +47,7 @@ private extension ViewController {
     
     func initExpandableTextViewSetting() {
         expandableTextView.configure(lines: 3, gap: 21)
-        expandableTextView.setting(font: .systemFont(ofSize: 20), backgroundColor: .white, borderWidth: 2, borderColor: .systemPink)
+        expandableTextView.setting(font: .systemFont(ofSize: 20), textColor: .black, backgroundColor: .white, borderWidth: 2, borderColor: .systemPink)
     }
     
     func initKeyboardViewSetting() {
