@@ -161,11 +161,7 @@ private extension WWExpandableTextView {
         
         let textViewSize = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude))
         let height = max(min(textViewSize.height, maxHeightConstraint.constant), minHeightConstraint.constant)
-        let size = textView.text._sizeThatFits(font: textView.font!, maximumSize: .init(width: frame.width, height: .greatestFiniteMagnitude))
-        
-        print("\(textView.text._sizeThatFits(font: textView.font!, maximumSize: self.frame.size)) => \(height)")
-        
-        // return size
+
         return CGSize(width: UIView.noIntrinsicMetric, height: height)
     }
 }
